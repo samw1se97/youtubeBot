@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>BotUI</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
-	<link rel="stylesheet" href="https://unpkg.com/botui/build/botui-theme-default.css" />
-	<script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
-<script src="https://unpkg.com/botui/build/botui.min.js"></script>
-<script src="public/bot.js"></script>
+  <meta charset="UTF-8">
+  <title>BotUI Chat</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
-<div id="my-botui-app">
-	<bot-ui></bot-ui>
-</div>
+  <div id="chat-container">
+    <div id="chat-messages"></div>
+    <div id="chat-form">
+      <input type="text" id="chat-input" placeholder="Type your message here...">
+      <button id="chat-submit">Send</button>
+    </div>
+  </div>
 
+  <script>
+    $(document).ready(function() {
+      var chatMessages = $('#chat-messages');
+      var chatInput = $('#chat-input');
+      var chatSubmit = $('#chat-submit');
+
+      chatSubmit.click(function() {
+        var message = chatInput.val();
+        chatInput.val('');
+
+        axios.post('/youtube', {text: message})
+          .then(function(response) {
+            var data = response.data;
+
+            // add the response message to the chat
+            var messageHtml = '<div><strong>Bot:</strong> ' + data.text + '</div>';
+            chatMessages.append(messageHtml);
+
+            // if the response includes a video, add it to the chat
+            if (data.videoId) {
+              var videoHtml = '<div><iframe width="560" height="315" src="https://www.youtube.com/embed/' + data.videoId + '" frameborder="0" allowfullscreen></iframe></div>';
+              chatMessages.append(videoHtml);
+            }
+          })
+          .catch(function(error) {
+            console.log(error);
+          });
+      });
+    });
+  </script>
 
 </body>
 </html>
