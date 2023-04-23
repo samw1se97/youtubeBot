@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "eae2471b-4568-4a25-9240-27ee13e42321",
+		"name": "youtubeBot Node Server API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"description": "Endpoint for checking server health",
+			"item": [
+				{
+					"name": "Status Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/healthz",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"healthz"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Load Test",
+			"description": "Endpoint for load testing the server",
+			"item": [
+				{
+					"name": "Load Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						 "url": {
+						 	"raw": "{{base_url}}/load-test",
+						 	"host": [
+						 		"{{base_url}}"
+						 	],
+						 	"path": [
+						 		"load-test"
+						 	]
+						 },
+						"description": "Endpoint for load testing the server",
+						"response": []
+					}
+				}
+			]
+		},
+		{
+			"name": "YouTube",
+			"description": "Endpoint for searching and downloading YouTube videos",
+			"item": [
+				{
+					"name": "Search YouTube",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\": \"search query\"\n}",
+							"description": "JSON object with search query"
+						},
+						"url": {
+							"raw": "{{base_url}}/youtube",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"youtube"
+							]
+						},
+						"description": "Search for a video on YouTube",
+						"response": []
+					}
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
