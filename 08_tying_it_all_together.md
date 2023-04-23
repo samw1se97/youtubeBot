@@ -32,7 +32,7 @@
    git clone https://github.com/ofekb/youtubeBot.git
    ```
 
-4. Update the index.js file with your IAM Security credential Access Key
+4. Update the index.js file with your IAM user Security credential Access Key
    ```javascript
    const s3 = new AWS.S3({ region: AWS_REGION, accessKeyId: 'YOURKEY', secretAccessKey: 'YOURSECRET' });
    ```
