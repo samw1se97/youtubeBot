@@ -1,6 +1,6 @@
 # Tying it all together
 
-## Deploy the YouTube Telegram Bot App
+## Deploy the YouTube Bot App
 
 ### Create IAM User 
 1. Create new IAM user
