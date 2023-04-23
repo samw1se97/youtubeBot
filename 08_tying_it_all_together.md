@@ -7,8 +7,6 @@
 2. Attach **AmazonS3FullAccess** policy
 3. Create new Security credential **Access Key** to send programmatic calls to AWS from youre app
 
-
-
 ### Create S3 Bucket 
 1. Create an S3 Bucket
 
@@ -32,6 +30,11 @@
 2. Get the app code by
    ```shell
    git clone https://github.com/ofekb/youtubeBot.git
+   ```
+
+4. Update the index.js file with your IAM Security credential Access Key
+   ```javascript
+   const s3 = new AWS.S3({ region: AWS_REGION, accessKeyId: 'YOURKEY', secretAccessKey: 'YOURSECRET' });
    ```
 
 3. Then install NodeJs dependencies by
