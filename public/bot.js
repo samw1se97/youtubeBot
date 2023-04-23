@@ -1,4 +1,4 @@
-var botui = new BotUI('my-botui-app');
+var botui = new botui('my-botui-app');
 
 
 function enterText() {
