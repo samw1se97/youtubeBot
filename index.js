@@ -24,9 +24,9 @@ app.get('/', (req, res) =>  {
   // console.log(req.headers);
   res.sendFile(__dirname + '/');
 });
-const AWS_REGION = 'eu-central-1';
+const AWS_REGION = 'eu-north-1';
 const s3 = new AWS.S3({
-  region: 'US East (N. Virginia)',
+  region: AWS_REGION,
   accessKeyId: 'AKIAX4WCC6H24UNWR2LG',
   secretAccessKey: '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',
 });
