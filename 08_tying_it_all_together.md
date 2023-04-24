@@ -3,11 +3,13 @@
 ## Deploy the YouTube Bot App
 
 ### Create IAM User 
+
 1. Create new IAM user
 2. Attach **AmazonS3FullAccess** policy
 3. Create new Security credential **Access Key** to send programmatic calls to AWS from youre app
 
 ### Create S3 Bucket 
+
 1. Create an S3 Bucket
 
 ### Fork the project repository
