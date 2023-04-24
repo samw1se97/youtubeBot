@@ -10,6 +10,19 @@
 ### Create S3 Bucket 
 1. Create an S3 Bucket
 
+### Fork the project repository
+
+1. Navigate to the repository page at https://github.com/ofekb/youtubeBot.git
+2. Click on the "Fork" button in the top-right corner of the page. This will create a copy of the repository in your own GitHub account.
+
+### Pull the code onto your local machine
+
+1. Open VSCode and select "File" > "Open Folder" from the top menu.
+2. Navigate to the directory where you want to store the repository on your local machine.
+3. Click "Open" to open the folder in VSCode.
+4. Open the VSCode terminal by selecting "Terminal" > "New Terminal" from the top menu.
+5. Type ```shell git clone https://github.com/<your-username>/youtubeBot.git ``` in the terminal to pull the repository onto your local machine. Replace <your-username> with your GitHub username.
+
 ### Create the EC2 instance 
 
 1. Create an EC2 instance, as follows:
@@ -29,7 +42,7 @@
    ```
 2. Get the app code by
    ```shell
-   git clone https://github.com/ofekb/youtubeBot.git
+   git clone https://github.com/<your-username>/youtubeBot.git
    ```
 
 4. Update the index.js file with your IAM user Security credential Access Key
