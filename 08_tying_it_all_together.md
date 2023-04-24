@@ -25,6 +25,15 @@
 4. Open the VSCode terminal by selecting "Terminal" > "New Terminal" from the top menu.
 5. Type ``` git clone https://github.com/<your-username>/youtubeBot.git ``` in the terminal to pull the repository onto your local machine. Replace <your-username> with your GitHub username.
 
+
+### Update the code
+
+1. Update the index.js file with your IAM user Security credential Access Key
+   ```javascript
+   const s3 = new AWS.S3({ region: AWS_REGION, accessKeyId: 'YOURKEY', secretAccessKey: 'YOURSECRET' });
+   ```
+2. Commit and push your code to your github repository
+
 ### Create the EC2 instance 
 
 1. Create an EC2 instance, as follows:
@@ -45,11 +54,6 @@
 2. Get the app code by
    ```shell
    git clone https://github.com/<your-username>/youtubeBot.git
-   ```
-
-4. Update the index.js file with your IAM user Security credential Access Key
-   ```javascript
-   const s3 = new AWS.S3({ region: AWS_REGION, accessKeyId: 'YOURKEY', secretAccessKey: 'YOURSECRET' });
    ```
 
 3. Then install NodeJs dependencies by
