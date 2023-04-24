@@ -25,7 +25,11 @@ app.get('/', (req, res) =>  {
   res.sendFile(__dirname + '/');
 });
 const AWS_REGION = 'eu-central-1';
-const s3 = new AWS.S3({ region: AWS_REGION, accessKeyId: 'YOURKEY', secretAccessKey: 'YOURSECRET' });
+const s3 = new AWS.S3({
+  region: 'US East (N. Virginia)',
+  accessKeyId: 'AKIAX4WCC6H24UNWR2LG',
+  secretAccessKey: 'JGg42d7G0XEksoYcAHX9AAF33DYoR2YuXandcZD4',
+});
 
 
 app.get('/status', (req, res) => {
